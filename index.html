@@ -106,24 +106,26 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">From online</h4>
-                    <p class="text-muted">A cute lululemon sweater. I saw how much you loved your old brown one that's beat up. You use to wear it a lot in Ottawa and I made fun of you so much for it... I wanted to get you something like that. BTW, the sales guy at the store was really hot. So I got him to try on the sweater and take it off a couple of times... for fitting, seeing how it would look on you...you know.</p>
+                    <div>
+                    <h4 class="question" data-q="1">From online</h4>
+                </div>
+                    <p class="answer1">A cute lululemon sweater. I saw how much you loved your old brown one that's beat up. You use to wear it a lot in Ottawa and I made fun of you so much for it... I wanted to get you something like that. BTW, the sales guy at the store was really hot. So I got him to try on the sweater and take it off a couple of times... for fitting, seeing how it would look on you...you know.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-gift fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Ghost Stories</h4>
-                    <p class="text-muted">For you to read to me... And of course for your personal enjoyment</p>
+                    <h4 class="question" data-q="2">Ghost Stories</h4>
+                    <p class="answer2">For you to read to me... And of course for your personal enjoyment</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-database fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Home made dinner</h4>
-                    <p class="text-muted">Mo jia rou and pumpkin pie</p>
+                    <h4 class="question" data-q="3">Home made dinner</h4>
+                    <p class="answer3">Mo jia rou and pumpkin pie...does this look like pancakes?</p>
                 </div>
             </div>
         </div>
@@ -214,14 +216,23 @@
     <script src="js/agency.js"></script>
 
 </body>
+<style type="text/css">
+   p.answer1{
+    display: none;
+   }
+      p.answer2{
+    display: none;
+   }
+      p.answer3{
+    display: none;
+   }
+</style>
 <script>
       
 $(function(){
-    $('#panel1').css({color: 'red', opacity:'0.5'});
-
-    $('#but').html(' <bold> my Button </bold>');
-    $('#but').on('mouseover', function (){
-        $('#panel1').slideToggle(200);
+    $('.question').on('click',function(){
+        var aNum = $(this).attr('data-q');
+        $('.answer' + aNum).toggle();
     });
 
 
